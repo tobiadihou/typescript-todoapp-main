@@ -75,7 +75,7 @@ function editTodo() {
 }
 
 function cancelEdit() {
-    editing.value = false;
+  editing.value = false
 }
 </script>
 
