@@ -23,11 +23,14 @@ import { nanoid } from 'nanoid'
 
 const todos = ref<Todo[]>([])
 function addTodo(value: string): void {
-  todos.value.push({
-    id: nanoid(),
-    title: value,
-    complete: false
-  })
+  if (value.trim() !== "") {
+    todos.value.push({
+      id: nanoid(),
+      title: value,
+      complete: false
+    })
+    
+  }
 }
 
 function deleteTodo(todo: Todo): void {
