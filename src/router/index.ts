@@ -6,6 +6,17 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'all',
+      component: TodoView
+    },
+    {
+      path: '/waiting',
+      name: 'waiting',
+      component: TodoView
+    },
+    {
+      path: '/completed',
+      name: 'completed',
       component: TodoView
     }
   ]
