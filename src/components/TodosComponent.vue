@@ -9,7 +9,7 @@
       @edit-todo="editTodo"
     />
 
-    <TodoFooter :todos="todos" />
+    <TodoFooter :todos="todos" @delete-completed="deleteCompleted" />
   </div>
 </template>
 
@@ -70,6 +70,10 @@ function updateTodo(todo: Todo, completedValue: boolean) {
 
 function editTodo(todo: Todo, value: string) {
   todo.title = value
+}
+
+function deleteCompleted() {
+  todos.value = todos.value.filter((todo) => !todo.complete)
 }
 </script>
 
