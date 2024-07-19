@@ -19,9 +19,12 @@ import TodoMain from '@/components/TodoMain.vue'
 import TodoFooter from '@/components/TodoFooter.vue'
 import type { Todo } from '@/@types'
 import { ref } from 'vue'
+ 
+import { useStorage } from '@vueuse/core'
 import { nanoid } from 'nanoid'
 
-const todos = ref<Todo[]>([])
+ 
+const todos =   useStorage<Todo[]>("todoapp-todos", []); 
 function addTodo(value: string): void {
   if (value.trim() !== "") {
     todos.value.push({
