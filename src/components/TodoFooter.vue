@@ -21,7 +21,13 @@
       </li>
     </ul>
 
-    <button class="clear-completed" @click="emit('delete-completed')" v-show="todos.some((todo)=>todo.complete)">Eff. tâches terminées</button>
+    <button
+      class="clear-completed"
+      @click="emit('delete-completed')"
+      v-show="todos.some((todo) => todo.complete)"
+    >
+      Eff. tâches terminées
+    </button>
   </footer>
 </template>
 
